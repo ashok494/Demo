@@ -1,0 +1,303 @@
+{
+  "logicalTable" : {
+    "name" : "Facts - Customers",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Average Age",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.AGE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "# Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.COMMENTS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Commute Distance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.COMMUTE_DISTANCE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Credit Balance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.CREDIT_BALANCE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Household Size",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.HOUSEHOLD_SIZE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Income",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.INCOME" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Late Mort Rent Pmts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.LATE_MORT_RENT_PMTS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Mortgage Amt",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.MORTGAGE_AMT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Num Cars",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.NUM_CARS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Num Mortgages",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.NUM_MORTGAGES" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Work Experience",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.WORK_EXPERIENCE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Years Current Employer",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.YRS_CURRENT_EMPLOYER" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Years Customer",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.YRS_CUSTOMER" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "Average Years Residence",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.YRS_RESIDENCE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    }, {
+      "name" : "# of Cust in Base",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust.",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER.CUST_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Genre.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Cust.",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Customers.Detail", "logicalLevel:Y10 - Movie Demo (ORCL).Customer Geography.Detail", "logicalLevel:Y10 - Movie Demo (ORCL).Customer Segment.Detail", "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Total", "logicalLevel:Y10 - Movie Demo (ORCL).Time.Total" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ]
+  }
+}

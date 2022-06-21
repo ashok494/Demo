@@ -1,0 +1,83 @@
+{
+  "logicalTable" : {
+    "name" : "Movie Crew",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Crew ID" ],
+    "logicalColumns" : [ {
+      "name" : "Crew ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Crew",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CREW.CREW_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Crew"
+    }, {
+      "name" : "Crew Member Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Crew",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CREW.NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Crew"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Crew",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CREW", "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE", "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE_CREW" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CREW",
+          "rightTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE_CREW",
+          "joinType" : "INNER",
+          "disable" : false
+        }, {
+          "leftTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE",
+          "rightTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE_CREW",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "dataGranularity" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie Crew.Crew" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Crew",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Crew ID" ],
+        "displayKey" : "Crew ID"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Movie Crew",
+        "levels" : [ "Total", "Crew" ]
+      } ]
+    }
+  }
+}

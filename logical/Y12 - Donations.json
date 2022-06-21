@@ -1,0 +1,27 @@
+{
+  "businessModel" : {
+    "name" : "Y12 - Donations",
+    "disable" : false,
+    "joins" : [ {
+      "leftTable" : "logicalTable:Y12 - Donations.Facts",
+      "rightTable" : "logicalTable:Y12 - Donations.Projects",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "leftTable" : "logicalTable:Y12 - Donations.Facts",
+      "rightTable" : "logicalTable:Y12 - Donations.School",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "leftTable" : "logicalTable:Y12 - Donations.Facts",
+      "rightTable" : "logicalTable:Y12 - Donations.Posted Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "leftTable" : "logicalTable:Y12 - Donations.Facts",
+      "rightTable" : "logicalTable:Y12 - Donations.Teacher",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

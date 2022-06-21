@@ -1,0 +1,212 @@
+{
+  "physicalTable" : {
+    "name" : "CUSTOMER",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "LAST_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "CITY_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PROMOTION_RESPONSE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "SEG",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : false
+    }, {
+      "name" : "COUNTRY",
+      "dataType" : "VARCHAR",
+      "length" : 400,
+      "nullable" : true
+    }, {
+      "name" : "MARITAL_STATUS",
+      "dataType" : "VARCHAR",
+      "length" : 8,
+      "nullable" : true
+    }, {
+      "name" : "STATE_PROVINCE",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "YRS_CUSTOMER",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "CONTINENT",
+      "dataType" : "VARCHAR",
+      "length" : 400,
+      "nullable" : true
+    }, {
+      "name" : "NUM_MORTGAGES",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "STATE_PROVINCE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "CUST_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : false
+    }, {
+      "name" : "FIRST_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "PET",
+      "dataType" : "VARCHAR",
+      "length" : 40,
+      "nullable" : true
+    }, {
+      "name" : "INCOME",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "RENT_OWN",
+      "dataType" : "VARCHAR",
+      "length" : 40,
+      "nullable" : true
+    }, {
+      "name" : "EMAIL",
+      "dataType" : "VARCHAR",
+      "length" : 416,
+      "nullable" : true
+    }, {
+      "name" : "EDUCATION",
+      "dataType" : "VARCHAR",
+      "length" : 40,
+      "nullable" : true
+    }, {
+      "name" : "YRS_CURRENT_EMPLOYER",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "COUNTRY_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 2,
+      "nullable" : true
+    }, {
+      "name" : "CONTINENT_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "NUM_CARS",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "STREET_ADDRESS",
+      "dataType" : "VARCHAR",
+      "length" : 400,
+      "nullable" : true
+    }, {
+      "name" : "JOB_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "WORK_EXPERIENCE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "INSUFF_FUNDS_INCIDENTS",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "INCOME_LEVEL",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : true
+    }, {
+      "name" : "LATE_MORT_RENT_PMTS",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "YRS_RESIDENCE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "CREDIT_BALANCE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "HOUSEHOLD_SIZE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "GENDER",
+      "dataType" : "VARCHAR",
+      "length" : 6,
+      "nullable" : true
+    }, {
+      "name" : "COUNTRY_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "POSTAL_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "CITY",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "FULL_TIME",
+      "dataType" : "VARCHAR",
+      "length" : 40,
+      "nullable" : true
+    }, {
+      "name" : "COMMENTS",
+      "dataType" : "VARCHAR",
+      "length" : 400,
+      "nullable" : true
+    }, {
+      "name" : "COMMUTE_DISTANCE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "MORTGAGE_AMT",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "AGE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "CUST_ID" ] ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "logicalTable" : {
+    "name" : "Movie",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Movie ID" ],
+    "logicalColumns" : [ {
+      "name" : "Movie ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Movie",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE.MOVIE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Movie Detail"
+    }, {
+      "name" : "Popularity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Movie",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE.POPULARITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Movie Detail"
+    }, {
+      "name" : "Title",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Movie",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE.TITLE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Movie Detail"
+    }, {
+      "name" : "Vote Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Movie",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE.VOTE_COUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Movie Detail"
+    }, {
+      "name" : "Movie Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Movie",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE.YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Movie Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Movie",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Movie.Movie Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Movie Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Movie ID" ],
+        "displayKey" : "Movie ID"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Movie",
+        "levels" : [ "Total", "Movie Detail" ]
+      } ]
+    }
+  }
+}

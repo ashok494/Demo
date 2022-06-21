@@ -1,0 +1,27 @@
+{
+  "physicalTable" : {
+    "name" : "CUSTOMER_SEGMENT",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "SEGMENT_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : false
+    }, {
+      "name" : "DESCRIPTION",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "NAME",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "SEGMENT_ID" ] ]
+  }
+}

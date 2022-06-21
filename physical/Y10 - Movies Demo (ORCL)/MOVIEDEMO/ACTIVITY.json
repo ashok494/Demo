@@ -1,0 +1,22 @@
+{
+  "physicalTable" : {
+    "name" : "ACTIVITY",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "NAME",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "ACTIVITY_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "ACTIVITY_ID" ] ]
+  }
+}

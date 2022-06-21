@@ -1,0 +1,22 @@
+{
+  "physicalTable" : {
+    "name" : "CREW",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "NAME",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "CREW_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : false
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "CREW_ID" ] ]
+  }
+}

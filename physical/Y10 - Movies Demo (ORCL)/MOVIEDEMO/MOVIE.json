@@ -1,0 +1,37 @@
+{
+  "physicalTable" : {
+    "name" : "MOVIE",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "YEAR",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "VOTE_COUNT",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "MOVIE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : false
+    }, {
+      "name" : "POPULARITY",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "TITLE",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "MOVIE_ID" ] ]
+  }
+}

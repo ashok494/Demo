@@ -1,0 +1,117 @@
+{
+  "physicalTable" : {
+    "name" : "TIMES",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "DAYS_IN_QUARTER",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "DATE_ID_KEY",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "MONTH_DESC",
+      "dataType" : "VARCHAR",
+      "length" : 8,
+      "nullable" : true
+    }, {
+      "name" : "DAYS_IN_DAY",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "DAY_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 9,
+      "nullable" : true
+    }, {
+      "name" : "DAYS_IN_YEAR",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "MONTH_ID",
+      "dataType" : "VARCHAR",
+      "length" : 7,
+      "nullable" : true
+    }, {
+      "name" : "END_OF_YEAR",
+      "dataType" : "DATETIME",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "MONTH_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 9,
+      "nullable" : true
+    }, {
+      "name" : "QUARTER_DESC",
+      "dataType" : "VARCHAR",
+      "length" : 7,
+      "nullable" : true
+    }, {
+      "name" : "QUARTER_ID",
+      "dataType" : "VARCHAR",
+      "length" : 7,
+      "nullable" : true
+    }, {
+      "name" : "TIME_ID",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "END_OF_MONTH",
+      "dataType" : "DATETIME",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "MONTH_NUMBER",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "DAY_NUMBER_IN_WEEK",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "QUARTER_NUMBER",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "YEAR_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "DAY_NUMBER_IN_MONTH",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "END_OF_QUARTER",
+      "dataType" : "DATETIME",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "DAYS_IN_MONTH",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "YEAR_DESC",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "TIME_ID" ] ]
+  }
+}

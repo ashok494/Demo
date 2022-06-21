@@ -1,0 +1,97 @@
+{
+  "logicalTable" : {
+    "name" : "Movie Cast",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Cast ID" ],
+    "logicalColumns" : [ {
+      "name" : "Cast ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CAST.CAST_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cast"
+    }, {
+      "name" : "Character",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE_CAST.CHARACTER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cast"
+    }, {
+      "name" : "Actor",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CAST.NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cast"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Cast",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CAST", "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE", "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE_CAST" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CAST",
+          "rightTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE_CAST",
+          "joinType" : "INNER",
+          "disable" : false
+        }, {
+          "leftTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE",
+          "rightTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.MOVIE_CAST",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Cast",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Cast ID" ],
+        "displayKey" : "Cast ID"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Movie Cast",
+        "levels" : [ "Total", "Cast" ]
+      } ]
+    }
+  }
+}

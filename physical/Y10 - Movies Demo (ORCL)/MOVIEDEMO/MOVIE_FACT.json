@@ -1,0 +1,62 @@
+{
+  "physicalTable" : {
+    "name" : "MOVIE_FACT",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "TIME_ID",
+      "dataType" : "DATETIME",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "DATE_ID_KEY",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "GENRE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SALES",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "ACTIVITY_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "TIME_ID_KEY",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "RECOMMENDED",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "MOVIE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "RATING",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "CUST_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "CUST_ID" ], [ "GENRE_ID" ], [ "TIME_ID" ], [ "ACTIVITY_ID" ], [ "MOVIE_ID" ] ]
+  }
+}

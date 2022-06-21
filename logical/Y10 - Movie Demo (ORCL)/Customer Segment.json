@@ -1,0 +1,95 @@
+{
+  "logicalTable" : {
+    "name" : "Customer Segment",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Segment ID" ],
+    "logicalColumns" : [ {
+      "name" : "Segment",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust. Segment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER_SEGMENT.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Detail"
+    }, {
+      "name" : "Segment Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust. Segment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER_SEGMENT.NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Detail"
+    }, {
+      "name" : "Segment ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Cust. Segment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER_SEGMENT.SEGMENT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Cust. Segment",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER", "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER_SEGMENT" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER",
+          "rightTable" : "physicalTable:Y10 - Movies Demo (ORCL).MOVIEDEMO.CUSTOMER_SEGMENT",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "dataGranularity" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Customer Segment.Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Segment ID" ],
+        "displayKey" : "Segment",
+        "additionalKeys" : [ [ "Segment Name" ], [ "Segment" ] ],
+        "preferredDrillPath" : [ "logicalLevel:Y10 - Movie Demo (ORCL).Customers.Detail" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Customer Segment",
+        "levels" : [ "Total", "Detail" ]
+      } ]
+    }
+  }
+}

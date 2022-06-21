@@ -1,0 +1,22 @@
+{
+  "physicalTable" : {
+    "name" : "CAST",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "CAST_ID",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : false
+    }, {
+      "name" : "NAME",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "additionalKeys" : [ [ "CAST_ID" ] ]
+  }
+}
